@@ -1,0 +1,834 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: white;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: black;
+    padding: 10px 0;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2.5vw;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+}
+
+.header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1vw;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header nav ul li a:hover {
+    color: #FFD700;
+}
+
+.hero {
+    position: relative;
+    height: 70vh; /* Настройка высоты секции */
+    background-image: url(/images/background.jpg); /* Подключи своё изображение */
+    background-size: cover; /* Заполнение секции */
+    background-position: center; /* Центрируем изображение */
+    background-repeat: no-repeat; /* Убираем повторение изображения */
+    overflow: hidden; /* Убираем возможные "лишние" пиксели */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-title {
+    font-size: 2.5vw;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-description {
+    font-size: 1.2vw;
+    color: #ddd;
+    margin-top: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+}
+
+/* Content Section */
+.content {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #1c1c1c;
+}
+
+.content h3 {
+    font-size: 2vw;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 1vw;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+
+.movies-container {
+    max-width: 1000px; /* Ограничиваем ширину контейнера */
+    margin: 0 auto; /* Центрируем контейнер */
+    padding: 20px 0; /* Отступ сверху и снизу */
+    display: grid;
+    grid-template-columns: repeat(3, auto); /* Фиксированная ширина колонок */
+    gap: 30px; /* Уменьшенное расстояние между карточками */
+    justify-content: center; /* Центрируем сетку по горизонтали */
+}
+
+/* Стили карточек фильмов */
+.movie-card {
+    background-color: #232323;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    width: 220px; /* Ширина карточек фиксирована */
+    height: 350px; /* Увеличенная высота карточек */
+    box-shadow: 0 0 15px 5px rgba(138, 43, 226, 0.4); /* Легкое фиолетовое свечение по умолчанию */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px 8px rgba(138, 43, 226, 0.8); /* Усиленное свечение при наведении */
+}
+
+.movie-card img {
+    width: 100%;
+    height: 82%; /* Занимает 85% высоты карточки */
+    object-fit: cover; /* Обрезка изображения, чтобы оно заполняло карточку */
+    display: block;
+    border-radius: 15px 15px 0 0; /* Скругление верхних углов */
+}
+
+.movie-card p {
+    margin: 5px 0 10px; /* Текст выше и ближе к картинке */
+    color: rgba(138, 43, 226, 0.8); /* Золотой текст для эстетики */
+    font-size: 1.2rem; /* Увеличенный шрифт */
+    font-weight: 600; /* Более жирный текст */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Легкая тень текста */
+    text-transform: uppercase; /* Заглавные буквы для стиля */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Секция залов */
+/* Секция залов */
+.rooms-section {
+    text-align: center;
+    background: linear-gradient(145deg, #1a1a2e, #16213e); /* Темный градиентный фон */
+    padding: 60px 20px;
+    color: white;
+}
+
+.rooms-section h3 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+    color: #f8f8f8;
+}
+
+.rooms-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-family: 'Roboto', sans-serif;
+    color: #bdbdbd;
+}
+
+/* Контейнер для карточек */
+.rooms-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Карточки залов */
+.room-card {
+    background: linear-gradient(145deg, #3b3174, #4a3e8c); /* Фиолетовый градиент */
+    border-radius: 20px;
+    width: 320px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); /* Розовое свечение по умолчанию */
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Для равномерного распределения внутри */
+}
+
+.room-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(75, 0, 130, 0.8); /* Фиолетовая тень при наведении */
+}
+
+.room-card h4 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: white; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.room-card .price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #e9ecef; /* Светлый текст */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Список услуг */
+.room-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #d6d6d6;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Равномерный отступ между строками */
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+.room-card ul li {
+    display: flex;
+    align-items: flex-start; /* Выравнивание текста с галочкой */
+    line-height: 1.4; /* Межстрочный интервал для удобства чтения */
+}
+
+.room-card ul li::before {
+    content: "✔";
+    margin-right: 10px; /* Отступ между галочкой и текстом */
+    color: #FFD700; /* Золотой маркер */
+    font-size: 1.2rem;
+    flex-shrink: 0; /* Галочка остается фиксированной и не сжимается */
+}
+
+.room-card ul li span {
+    display: inline-block;
+    word-break: break-word; /* Перенос текста, если он длинный */
+}
+
+/* Кнопка бронирования */
+.room-card button {
+    background: #5e4ae3; /* Светло-фиолетовая кнопка */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.room-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 105, 180, 0.8); /* Усиленное розовое свечение при наведении */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Секция отличий */
+.difference-section {
+    margin-top: 100px;
+    text-align: center;
+    background: linear-gradient(145deg, #3a0ca3, #7209b7); /* Фиолетовый градиент */
+    color: white;
+    padding: 60px 20px;
+}
+
+.difference-section h3 {
+    font-size: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 20px;
+    color: #f8f8f8;
+}
+
+.difference-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-family: 'Roboto', sans-serif;
+    color: #dcdcdc;
+}
+
+/* Контейнер для карточек */
+.features-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Карточка особенности */
+.feature-card {
+    background: linear-gradient(145deg, #4c1f96, #6c2bb7); /* Градиент карточки */
+    border-radius: 20px;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    color: white;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(75, 0, 130, 0.8); /* Усиленное свечение */
+}
+
+.feature-card .feature-icon img {
+    width: 100px;
+    height: 100px;
+}
+
+.feature-card h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #c36aec; /* Золотой цвет */
+}
+
+.feature-card p {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    color: #e0e0e0;
+    line-height: 1.5;
+}
+
+
+
+
+
+   
+
+
+
+/* Секция с фоновым изображением */
+.room-section {
+    margin-top: 100px;
+    
+    width: 98%;
+
+    border-radius: 25px;
+    background-image: url('/images/background1.jpg'); /* Фото заднего фона */
+    background-size: cover; /* Масштабирование фона на весь экран */
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 650px; /* Задает высоту секции на весь экран */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Контент выровнен вправо */
+    padding: 20px;
+}
+
+/* Затемнение фона */
+.room-section::before {
+    border-radius: 15px;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Затемнение для улучшения читаемости текста */
+    z-index: 1;
+}
+
+/* Контент */
+.room-content {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+    border-radius: 15px;
+    padding: 25px;
+    max-width: 400px; /* Ограничиваем ширину текста */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Тень для объема */
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+/* Заголовок */
+.room-content h3 {
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif; /* Шрифт Poppins для современного вида */
+    font-weight: 700; /* Жирный текст */
+    color: #7209b7; /* Фиолетовый цвет */
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Заглавные буквы */
+}
+
+/* Текст */
+.room-content p {
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif; /* Шрифт Roboto для удобочитаемости */
+    line-height: 1.6;
+    color: #4a4a4a; /* Темно-серый текст */
+}
+
+
+
+
+
+
+
+
+/* Секция бронирования */
+/* Секция бронирования */
+.booking-steps {
+    background: linear-gradient(145deg, #3b3174, #4a3e8c); /* Фиолетовый градиент */
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.booking-steps h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #FFD700; /* Золотой акцент для заголовка */
+}
+
+.booking-steps p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-family: 'Roboto', sans-serif;
+    color: #dcdcdc;
+}
+
+/* Контейнер шагов */
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 50px;
+    padding-left: 50px;
+}
+
+.steps-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 37%; /* Сместить линию ближе к иконкам */
+    width: 3px; /* Уменьшить ширину полоски */
+    height: 100%;
+    background: linear-gradient(to bottom, #FFD700, transparent); /* Градиент */
+    z-index: 0;
+}
+
+
+
+
+/* Шаг */
+.step {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.step .icon {
+    width: 60px; /* Размер круга */
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #FFD700, #ffdd80); /* Градиентная заливка */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); /* Свечение */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Обрезка логотипа внутри круга */
+    position: relative;
+}
+
+
+.step:hover .icon {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 1); /* Усиленное свечение */
+}
+
+.step .icon img {
+    width: 100%; /* Логотип заполняет круг */
+    height: 100%; /* Высота логотипа также заполняет круг */
+    object-fit: cover; /* Пропорциональное заполнение */
+    border-radius: 50%; /* Округление изображения внутри */
+}
+
+/* Контент */
+.step .content {
+    background: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.step .content h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #FFD700;
+}
+
+.step .content p {
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #dcdcdc;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Галерея фильмов */
+/* Галерея фильмов */
+.film-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три фотографии в строке */
+    gap: 20px; /* Расстояние между фотографиями */
+    justify-content: center;
+    padding: 20px;
+    background-color: #1a1a1a; /* Темный фон */
+    border-radius: 15px;
+}
+
+/* Карточка с фотографией */
+.film {
+    overflow: hidden;
+    border-radius: 10px; /* Скругленные углы */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Легкая тень */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.film img {
+    width: 100%; /* Заполнение контейнера */
+    height: 100%; /* Пропорциональное отображение */
+    object-fit: cover; /* Пропорциональное заполнение */
+}
+
+.film:hover {
+    transform: scale(1.03); /* Легкое увеличение при наведении */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+
+
+
+
+
+
+/* Контейнер с отзывами */
+/* Контейнер с отзывами */
+.reviews-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    gap: 20px; /* Расстояние между карточками */
+    justify-content: center; /* Центрируем отзывы */
+    max-width: 900px; /* Ограничение ширины контейнера */
+    margin: 0 auto; /* Центрирование контейнера */
+}
+
+/* Карточка отзыва */
+.review-card {
+    background: linear-gradient(145deg, rgba(63, 43, 150, 0.9), rgba(91, 61, 230, 0.8)); /* Фиолетовый градиент с прозрачностью */
+    border-radius: 20px; /* Скругленные углы */
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.1); /* Внешняя и внутренняя тень */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.2); /* Усиление теней */
+    background: linear-gradient(145deg, rgba(91, 61, 230, 1), rgba(113, 87, 250, 1)); /* Более яркий градиент при наведении */
+}
+
+/* Лёгкий светлый эффект внутри */
+.review-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 80%);
+    z-index: 0;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.review-card:hover::before {
+    opacity: 1;
+}
+
+/* Шапка отзыва */
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Аватарка */
+.review-avatar {
+    width: 60px; /* Размер круга */
+    height: 60px;
+    border-radius: 50%; /* Чёткий круг */
+    margin-right: 15px;
+    border: 3px solid #FFD700; /* Золотая рамка */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.8); /* Лёгкое свечение */
+    object-fit: cover; /* Чтобы изображение полностью заполняло круг */
+}
+
+/* Имя автора */
+.review-author {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFD700; /* Золотой цвет текста */
+    font-family: 'Lora', serif; /* Более элегантный шрифт для имени */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Лёгкая тень для текста */
+}
+
+/* Текст отзыва */
+.review-text {
+    font-size: 1rem;
+    color: #ffffff; /* Белый текст */
+    line-height: 1.8;
+    position: relative;
+    z-index: 1;
+    font-family: 'Roboto Slab', serif; /* Элегантный, но читаемый шрифт */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); /* Лёгкая тень для читаемости */
+}
+
+/* Фон секции */
+.reviews-section {
+    background: linear-gradient(to bottom, #2a255a, #3f388d); /* Красивый вертикальный градиент */
+    padding: 60px 20px;
+    border-radius: 15px; /* Скруглённые углы секции */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Тень секции */
+    text-align: center;
+}
+
+/* Заголовок секции */
+.reviews-section h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif; /* Более изысканный шрифт */
+    color: #FFD700; /* Золотой акцент для заголовка */
+}
+
+/* Описание секции */
+.reviews-section p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    font-family: 'Roboto', sans-serif;
+    color: #dcdcdc;
+}
+
+
+
+
+
+
+
+
+
+/* Общий стиль секции */
+.video-location-section {
+    margin-top: 100px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Первая фотография */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Первая фотография занимает 60% высоты */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6); /* Лёгкое затемнение */
+}
+
+.text-overlay {
+    position: absolute;
+    color: white;
+    text-align: center;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    z-index: 3;
+    top: 50%; /* Центрируем по вертикали */
+    left: 50%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%); /* Для точного центрирования */
+}
+
+.text-overlay h3 {
+    margin-top: 100px;
+    font-size: 3rem; /* Увеличенный текст */
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Заглавные буквы для стиля */
+}
+
+.text-overlay p {
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+    margin: 10px 0;
+}
+
+/* Кнопка воспроизведения */
+.play-button {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%; /* Делаем полностью круглую кнопку */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.play-button span {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+}
+
+/* Вторая фотография */
+.second-image {
+    position: absolute;
+    top: 60vh; /* Начало второй фотографии */
+    width: 100%;
+    height: 40vh; /* Оставшиеся 40% высоты */
+    z-index: 1; /* Отправляем её под первую фотографию */
+}
+
+.second-image .background-image {
+    filter: brightness(0.5); /* Затемнённая фотография */
+}
+
+.second-image .text-overlay h3 {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.second-image .text-overlay p {
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
