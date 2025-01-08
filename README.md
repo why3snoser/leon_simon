@@ -21,5 +21,4 @@
 Улучшение дизайна с учетом пользовательского опыта.
 Внедрение функциональности для интерактивных элементов.
 
-![image]([https://github.com/user-attachments/assets/aa45afdc-878b-40ad-aa26-e9da5e6aff7c](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExZGQ2ajB2YWUyejJtanF6c20zbDNhY2dhMzR5ZngzYjJvMHk0aHVlcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LdOyjZ7io5Msw/giphy.webp))
-
+![image](https://github.com/user-attachments/assets/dec2cd70-b467-49cd-8634-78530e6f8a2b)
