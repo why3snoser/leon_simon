@@ -462,7 +462,7 @@ body {
 .room-content {
     position: relative;
     z-index: 2;
-    background: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+    background: rgba(255, 255, 255, 0.67); /* Полупрозрачный белый фон */
     border-radius: 15px;
     padding: 25px;
     max-width: 400px; /* Ограничиваем ширину текста */
@@ -482,6 +482,7 @@ body {
 
 /* Текст */
 .room-content p {
+    font-weight: 600;
     font-size: 1.1rem;
     font-family: 'Roboto', sans-serif; /* Шрифт Roboto для удобочитаемости */
     line-height: 1.6;
@@ -1044,9 +1045,10 @@ body {
         max-width: 60%; /* Ширина контента занимает 90% экрана */
         padding: 15px; /* Уменьшенные внутренние отступы */
         border-radius: 10px; /* Уменьшенные скругления */
-        background: rgba(255, 255, 255, 0.85); /* Полупрозрачный белый фон */
+        background: rgba(255, 255, 255, 0.75); /* Полупрозрачный белый фон */
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Мягкая тень */
         text-align: center; /* Центрируем текст для телефона */
+    
     }
 
     .room-content h3 {
@@ -1062,6 +1064,9 @@ body {
         line-height: 1.4; /* Уменьшенный межстрочный интервал */
         color: #333; /* Более контрастный текст */
     }
+
+
+
 
     .room-card {
         
@@ -1117,8 +1122,8 @@ body {
         width: 100%; /* Карточки равны ширине ячейки */
         max-width: none; /* Убираем ограничение ширины */
         border-radius: 10px; /* Скругленные углы */
-        box-shadow: 0 2px 8px rgba(138, 43, 226, 0.3); /* Легкое свечение */
-        height: 260px; /* Увеличенная высота карточки */
+        box-shadow: 0 2px 8px rgba(138, 43, 226, 0.45); /* Легкое свечение */
+        height: 270px; /* Увеличенная высота карточки */
     }
 
     .movie-card img {
@@ -1128,18 +1133,18 @@ body {
         border-radius: 10px 10px 0 0; /* Скругленные верхние углы */
     }
     .movie-card p {
-        font-weight: 500;
+        font-weight: 700; /* Полужирный текст */
         font-size: 16px; /* Умеренный текст */
-        font-weight: 700;
-        padding: 23px; /* Внутренние отступы */
-        text-shadow: none; /* Убираем тень текста */
-        height: auto; /* Автоматическая высота текста */
+        padding: 20px; /* Внутренние отступы */
         background-color: #111; /* Черный фон */
         border-radius: 0 0 10px 10px; /* Скругленные нижние углы */
         color: rgba(245, 245, 245, 0.9); /* Легкий белый цвет */
         text-align: center; /* Центрируем текст */
+        height: auto; /* Высота адаптируется к содержимому */
+        white-space: normal; /* Разрешаем перенос строк */
+        overflow: visible; /* Полностью отображаем содержимое */
+        word-wrap: break-word; /* Перенос слов при необходимости */
     }
-
     .movie-card:hover {
         transform: none; /* Убираем поднятие карточки на телефонах */
         box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4); /* Немного увеличиваем свечение при наведении */
