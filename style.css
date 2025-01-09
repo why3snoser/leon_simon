@@ -50,7 +50,7 @@ body {
 .hero {
     position: relative;
     height: 70vh; /* Настройка высоты секции */
-    background-image: url(/images/background.jpg); /* Подключи своё изображение */
+    background-image: url(images/background.jpg); /* Подключи своё изображение */
     background-size: cover; /* Заполнение секции */
     background-position: center; /* Центрируем изображение */
     background-repeat: no-repeat; /* Убираем повторение изображения */
