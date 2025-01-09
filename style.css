@@ -50,7 +50,7 @@ body {
 .hero {
     position: relative;
     height: 70vh; /* Настройка высоты секции */
-    background-image: url(images/background.jpg); /* Подключи своё изображение */
+    background-image: url(/images/background.jpg); /* Подключи своё изображение */
     background-size: cover; /* Заполнение секции */
     background-position: center; /* Центрируем изображение */
     background-repeat: no-repeat; /* Убираем повторение изображения */
@@ -86,6 +86,9 @@ body {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
 }
 
+
+
+
 /* Content Section */
 .content {
     padding: 40px 20px;
@@ -113,49 +116,86 @@ body {
 
 
 
+/* Контейнер для фильмов */
 .movies-container {
-    max-width: 1000px; /* Ограничиваем ширину контейнера */
+    max-width: 1200px; /* Увеличенная ширина контейнера */
     margin: 0 auto; /* Центрируем контейнер */
-    padding: 20px 0; /* Отступ сверху и снизу */
+    padding: 40px 0; /* Отступ сверху и снизу */
     display: grid;
-    grid-template-columns: repeat(3, auto); /* Фиксированная ширина колонок */
-    gap: 30px; /* Уменьшенное расстояние между карточками */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Адаптивные колонки */
+    gap: 30px; /* Расстояние между карточками */
     justify-content: center; /* Центрируем сетку по горизонтали */
 }
 
-/* Стили карточек фильмов */
 .movie-card {
-    background-color: #232323;
-    border-radius: 15px;
+    background: linear-gradient(145deg, #282828, #3a3a3a); /* Градиент для фона */
+    border-radius: 20px;
     overflow: hidden;
     text-align: center;
-    width: 220px; /* Ширина карточек фиксирована */
-    height: 350px; /* Увеличенная высота карточек */
-    box-shadow: 0 0 15px 5px rgba(138, 43, 226, 0.4); /* Легкое фиолетовое свечение по умолчанию */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3); /* Легкое фиолетовое свечение по умолчанию */
 }
 
 .movie-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px 8px rgba(138, 43, 226, 0.8); /* Усиленное свечение при наведении */
+    transform: translateY(-10px); /* Поднимаем карточку при наведении */
+    box-shadow: 0 10px 30px rgba(138, 43, 226, 0.7); /* Усиленное свечение */
 }
 
 .movie-card img {
     width: 100%;
-    height: 82%; /* Занимает 85% высоты карточки */
-    object-fit: cover; /* Обрезка изображения, чтобы оно заполняло карточку */
-    display: block;
-    border-radius: 15px 15px 0 0; /* Скругление верхних углов */
+    height: 75%; /* Уменьшенная высота изображения */
+    object-fit: cover; /* Обрезка изображения для заполнения */
+    border-radius: 20px 20px 0 0; /* Скругление только верхних углов */
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover img {
+    transform: scale(1.1); /* Увеличение изображения при наведении */
 }
 
 .movie-card p {
-    margin: 5px 0 10px; /* Текст выше и ближе к картинке */
-    color: rgba(138, 43, 226, 0.8); /* Золотой текст для эстетики */
-    font-size: 1.2rem; /* Увеличенный шрифт */
-    font-weight: 600; /* Более жирный текст */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Легкая тень текста */
-    text-transform: uppercase; /* Заглавные буквы для стиля */
+    margin: 0; /* Убираем стандартные отступы */
+    padding: 1px; /* Добавляем внутренние отступы */
+    color: rgba(245, 245, 245, 0.95); /* Почти белый цвет для лучшей читабельности */
+    font-size: 1.2rem; /* Увеличенный размер шрифта */
+    font-weight: 700; /* Жирный текст для акцента */
+    font-family: 'Poppins', sans-serif; /* Элегантный и современный шрифт */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Легкая тень для объема */
+    background-color: #111; /* Глубокий черный фон для контраста */
+    text-transform: capitalize; /* Слова начинаются с заглавной буквы */
+    letter-spacing: 1px; /* Легкое расстояние между буквами */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25%; /* Пропорциональная высота текста */
+    border-radius: 0 0 15px 15px; /* Скругленные нижние углы */
+    overflow: hidden; /* Защита от переполнения текста */
+    transition: color 0.3s ease, background 0.3s ease; /* Анимация при наведении */
+}
+
+.movie-card:hover p {
+    color: #ffd700; /* Золотой цвет текста при наведении */
+    background: rgba(20, 20, 20, 0.9); /* Легкая подсветка фона */
+}
+
+
+
+/* Добавляем эффект свечения при наведении */
+.movie-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.3), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.movie-card:hover::before {
+    opacity: 1; /* Появляется свечение при наведении */
 }
 
 
@@ -172,7 +212,7 @@ body {
 
 
 
-/* Секция залов */
+
 /* Секция залов */
 .rooms-section {
     text-align: center;
@@ -263,7 +303,7 @@ body {
 .room-card ul li::before {
     content: "✔";
     margin-right: 10px; /* Отступ между галочкой и текстом */
-    color: #FFD700; /* Золотой маркер */
+    color: #FFD700; 
     font-size: 1.2rem;
     flex-shrink: 0; /* Галочка остается фиксированной и не сжимается */
 }
@@ -310,15 +350,15 @@ body {
 .difference-section {
     margin-top: 100px;
     text-align: center;
-    background: linear-gradient(145deg, #3a0ca3, #7209b7); /* Фиолетовый градиент */
-    color: white;
+    background: linear-gradient(145deg, #1a1a2e, #16213e); /* Темный градиентный фон */
     padding: 60px 20px;
+    color: white;
 }
 
 .difference-section h3 {
     font-size: 2.5rem;
+    margin-bottom: 15px;
     font-family: 'Roboto', sans-serif;
-    margin-bottom: 20px;
     color: #f8f8f8;
 }
 
@@ -326,7 +366,7 @@ body {
     font-size: 1.2rem;
     margin-bottom: 40px;
     font-family: 'Roboto', sans-serif;
-    color: #dcdcdc;
+    color: #bdbdbd;
 }
 
 /* Контейнер для карточек */
@@ -339,39 +379,44 @@ body {
 
 /* Карточка особенности */
 .feature-card {
-    background: linear-gradient(145deg, #4c1f96, #6c2bb7); /* Градиент карточки */
+    background: linear-gradient(145deg, #3b3174, #4a3e8c); /* Фиолетовый градиент */
     border-radius: 20px;
-    width: 250px;
+    width: 320px;
     padding: 20px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4); /* Розовое свечение */
     transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
     text-align: center;
-    color: white;
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(75, 0, 130, 0.8); /* Усиленное свечение */
+    box-shadow: 0 15px 40px rgba(75, 0, 130, 0.8); /* Усиленное свечение при наведении */
 }
 
 .feature-card .feature-icon img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
 }
 
 .feature-card h4 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 10px;
     font-family: 'Roboto', sans-serif;
-    color: #c36aec; /* Золотой цвет */
+    color: white; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .feature-card p {
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
-    color: #e0e0e0;
+    color: #d6d6d6;
     line-height: 1.5;
 }
+
 
 
 
@@ -451,7 +496,6 @@ body {
 
 
 /* Секция бронирования */
-/* Секция бронирования */
 .booking-steps {
     background: linear-gradient(145deg, #3b3174, #4a3e8c); /* Фиолетовый градиент */
     color: white;
@@ -487,8 +531,8 @@ body {
     content: '';
     position: absolute;
     top: 0;
-    left: 37%; /* Сместить линию ближе к иконкам */
-    width: 3px; /* Уменьшить ширину полоски */
+    left: 36.3%; 
+    width: 3px;
     height: 100%;
     background: linear-gradient(to bottom, #FFD700, transparent); /* Градиент */
     z-index: 0;
@@ -566,7 +610,6 @@ body {
 
 
 
-/* Галерея фильмов */
 /* Галерея фильмов */
 .film-gallery {
     display: grid;
@@ -832,3 +875,397 @@ body {
     color: #ffffff;
 }
 
+
+/* Адаптивные стили */
+
+/* ====== Телефоны (ширина экрана до 576px) ====== */
+@media (max-width: 576px) {
+    /* Уменьшаем размеры текста */
+    body {
+        font-size: 14px;
+    }
+
+    .header h1 {
+        font-size: 4vw;
+    }
+
+    .header nav ul li a {
+        font-size: 3vw;
+    }
+
+    .hero {
+        height: 50vh; /* Уменьшенная высота для геро-секции */
+    }
+
+    .hero-title {
+        font-size: 4vw;
+    }
+
+    .hero-description {
+        font-size: 3vw;
+    }
+
+    .content h3 {
+        font-size: 4vw;
+    }
+
+    .content p {
+        font-size: 3vw;
+    }
+
+    /* Карточки фильмов */
+    .movies-container {
+        grid-template-columns: repeat(2, 1fr); /* Сетка 2x2 */
+        gap: 15px; /* Уменьшаем отступы */
+    }
+
+    .movie-card {
+        width: 100%; /* Карточки занимают всю ширину */
+        height: auto; /* Автоматическая высота */
+    }
+
+    .movie-card img {
+        height: 60%; /* Уменьшаем высоту изображения */
+    }
+
+    .movie-card p {
+        font-size: 1rem; /* Уменьшаем размер текста */
+    }
+}
+
+/* ====== Планшеты (ширина экрана от 577px до 768px) ====== */
+@media (min-width: 577px) and (max-width: 768px) {
+    .header h1 {
+        font-size: 3vw;
+    }
+
+    .header nav ul li a {
+        font-size: 1.5vw;
+    }
+
+    .hero {
+        height: 60vh; /* Умеренная высота для геро-секции */
+    }
+
+    .hero-title {
+        font-size: 3vw;
+    }
+
+    .hero-description {
+        font-size: 2vw;
+    }
+
+    .content h3 {
+        font-size: 3vw;
+    }
+
+    .content p {
+        font-size: 1.5vw;
+    }
+
+    /* Карточки фильмов */
+    .movies-container {
+        grid-template-columns: repeat(3, 1fr); /* Сетка 3x2 */
+        gap: 20px;
+    }
+
+    .movie-card {
+        width: 90%;
+        height: auto;
+    }
+
+    .movie-card img {
+        height: 65%;
+    }
+
+    .movie-card p {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Адаптивный стиль для отзывов на телефонах */
+@media (max-width: 576px) {
+    body {
+        font-size: 17px; /* Уменьшаем размер шрифта для телефона */
+    }
+
+    .header {
+        padding: 10px; /* Сохраняем минимальные отступы */
+    }
+
+    .header-content {
+        text-align: center; /* Центрируем заголовок */
+        padding: 0 10px; /* Уменьшенные боковые отступы */
+    }
+
+    .header h1 {
+        font-size: 8vw; /* Увеличиваем текст для лучшей читаемости */
+    }
+
+    .header nav ul { /* Список меню в колонку */
+        gap: 10px; /* Уменьшаем отступы между пунктами */
+    }
+
+    .header nav ul li a {
+        font-size: 4vw; /* Увеличиваем шрифт для телефонов */
+    }
+
+    .hero {
+        height: 50vh; /* Уменьшенная высота секции */
+        background-position: center; /* Центрируем изображение */
+    }
+
+    .hero-overlay {
+        padding: 10px; /* Уменьшенные внутренние отступы */
+    }
+
+    .hero-title {
+        font-size: 5vw; /* Увеличиваем заголовок для акцента */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Уменьшенная тень */
+    }
+
+    .hero-description {
+        font-size: 3.5vw; /* Увеличиваем текст описания */
+        margin-top: 10px;
+        line-height: 1.4; /* Оптимальный межстрочный интервал */
+    }
+
+
+
+
+    .room-section {
+        height: 600px; /* Уменьшенная высота секции */
+        padding: 15px; /* Уменьшенные отступы */
+        margin-bottom: 20px;
+    }
+
+    .room-content {
+        max-width: 60%; /* Ширина контента занимает 90% экрана */
+        padding: 15px; /* Уменьшенные внутренние отступы */
+        border-radius: 10px; /* Уменьшенные скругления */
+        background: rgba(255, 255, 255, 0.85); /* Полупрозрачный белый фон */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Мягкая тень */
+        text-align: center; /* Центрируем текст для телефона */
+    }
+
+    .room-content h3 {
+        font-weight: 700;
+        font-size: 1.5rem; /* Уменьшенный размер заголовка */
+        margin-bottom: 10px; /* Уменьшенный отступ под заголовком */
+        color: #5e35b1; /* Более мягкий фиолетовый цвет */
+    }
+
+    .room-content p {
+        font-weight: 550;
+        font-size: 0.9rem; /* Уменьшенный размер текста */
+        line-height: 1.4; /* Уменьшенный межстрочный интервал */
+        color: #333; /* Более контрастный текст */
+    }
+
+    .room-card {
+        
+        width: 100%; /* Карточка занимает всю ширину экрана */
+        max-width: 380px; /* Максимальная ширина для мобильных */
+        margin: 0 auto; /* Центрируем карточку */
+        border-radius: 15px; /* Уменьшенный радиус */
+        padding: 15px; /* Уменьшенные внутренние отступы */
+        box-shadow: 0 3px 10px rgba(255, 105, 180, 0.3); /* Легкое свечение */
+    }
+
+    .room-card h4 {
+        font-size: 1.6rem; /* Уменьшенный размер заголовка */
+        margin-bottom: 10px;
+        text-align: center; /* Центрируем текст */
+    }
+
+    .room-card .price {
+        font-size: 1.3rem; /* Уменьшенный размер цены */
+        margin: 10px 0;
+        text-align: center; /* Центрируем текст */
+    }
+
+    .room-card ul {
+        font-weight: 500;
+        font-size: 1rem; /* Уменьшенный размер текста */
+        gap: 6px; /* Уменьшенные отступы между пунктами */
+        margin-top: 10px; /* Добавляем отступ сверху */
+    }
+
+    .room-card ul li {
+        line-height: 1.5; /* Уменьшенный межстрочный интервал */
+    }
+
+    .room-card button {
+        font-size: 0.9rem; /* Уменьшенный текст кнопки */
+        padding: 18px 15px; /* Уменьшенные внутренние отступы кнопки */
+        width: 100%; /* Кнопка занимает всю ширину карточки */
+        margin-top: 15px; /* Отступ сверху */
+    }
+
+
+
+
+
+    .movies-container {
+        grid-template-columns: repeat(2, 1fr); /* Две карточки в ряду */
+        gap: 15px; /* Расстояние между карточками */
+        padding: 10px; /* Уменьшенные отступы */
+    }
+
+    .movie-card {
+        width: 100%; /* Карточки равны ширине ячейки */
+        max-width: none; /* Убираем ограничение ширины */
+        border-radius: 10px; /* Скругленные углы */
+        box-shadow: 0 2px 8px rgba(138, 43, 226, 0.3); /* Легкое свечение */
+        height: 260px; /* Увеличенная высота карточки */
+    }
+
+    .movie-card img {
+        width: 100%; /* Изображение заполняет карточку */
+        height: 200px; /* Увеличенная высота изображения */
+        object-fit: cover; /* Масштабирование без искажений */
+        border-radius: 10px 10px 0 0; /* Скругленные верхние углы */
+    }
+    .movie-card p {
+        font-weight: 500;
+        font-size: 16px; /* Умеренный текст */
+        font-weight: 700;
+        padding: 23px; /* Внутренние отступы */
+        text-shadow: none; /* Убираем тень текста */
+        height: auto; /* Автоматическая высота текста */
+        background-color: #111; /* Черный фон */
+        border-radius: 0 0 10px 10px; /* Скругленные нижние углы */
+        color: rgba(245, 245, 245, 0.9); /* Легкий белый цвет */
+        text-align: center; /* Центрируем текст */
+    }
+
+    .movie-card:hover {
+        transform: none; /* Убираем поднятие карточки на телефонах */
+        box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4); /* Немного увеличиваем свечение при наведении */
+    }
+
+    .movie-card:hover img {
+        transform: none; /* Убираем увеличение изображения */
+    }
+
+    .movie-card:hover p {
+        color: #ffd700; /* Сохраняем золотой текст при наведении */
+    }
+
+
+
+
+
+
+
+    .booking-steps {
+        padding: 40px 15px; /* Уменьшенные отступы */
+        text-align: center;
+    }
+
+    .booking-steps h3 {
+        font-size: 1.8rem; /* Уменьшенный размер заголовка */
+        margin-bottom: 15px;
+    }
+
+    .booking-steps p {
+        font-size: 1rem; /* Уменьшенный текст описания */
+        margin-bottom: 30px;
+    }
+
+    .steps-container {
+        gap: 30px; /* Уменьшенное расстояние между шагами */
+        padding-left: 0; /* Убираем смещение */
+    }
+
+    .steps-container::before {
+        left: 50%; /* Линия по центру */
+        transform: translateX(-50%);
+        width: 2px; /* Тоньше для телефонов */
+    }
+
+    .step {
+        flex-direction: column; /* Вертикальное расположение */
+        align-items: center;
+        gap: 15px; /* Расстояние между элементами */
+    }
+
+    .step .icon {
+        width: 50px; /* Меньше размер круга */
+        height: 50px;
+    }
+
+    .step .icon img {
+        width: 80%; /* Меньший размер изображения внутри круга */
+        height: 80%;
+    }
+
+    .step .content {
+        padding: 15px; /* Уменьшенные внутренние отступы */
+        max-width: 100%; /* Ширина 100% для телефона */
+        text-align: center; /* Центрируем текст */
+    }
+
+    .step .content h4 {
+        font-size: 1.2rem; /* Уменьшенный заголовок */
+        margin-bottom: 8px;
+    }
+
+    .step .content p {
+        font-size: 0.9rem; /* Уменьшенный текст */
+        line-height: 1.4;
+    }
+    .reviews-container {
+        display: flex;
+        flex-direction: column; /* Размещаем карточки в один столбец */
+        gap: 20px; /* Отступ между карточками */
+        padding: 10px; /* Отступы внутри контейнера */
+    }
+
+    .review-card {
+        background: #1a1a1a; /* Тёмный фон для отзывов */
+        border-radius: 15px; /* Скруглённые углы */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Лёгкая тень */
+        padding: 15px; /* Внутренние отступы карточки */
+        text-align: left; /* Выравнивание текста по левому краю */
+    }
+
+    .review-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .review-avatar {
+        width: 50px; /* Уменьшаем размер аватара */
+        height: 50px;
+        border-radius: 50%; /* Круглый аватар */
+        margin-right: 10px; /* Отступ между аватаром и именем */
+    }
+
+    .review-author {
+        font-size: 1.2rem; /* Увеличенный размер имени */
+        font-weight: 600;
+        color: #FFD700; /* Золотой цвет */
+    }
+
+    .review-text {
+        font-size: 1rem; /* Размер текста отзыва */
+        color: #ccc;
+        line-height: 1.5;
+    }
+
+    .reviews h2 {
+        font-size: 1.8rem; /* Размер заголовка */
+        text-align: center; /* Центрируем заголовок */
+        margin-bottom: 15px;
+    }
+
+    .reviews p {
+        font-size: 1rem; /* Размер описания */
+        color: #bbb;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}

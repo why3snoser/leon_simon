@@ -13,11 +13,11 @@
             <h1>Кинокафе</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Кинолента</a></li>
-                    <li><a href="#">Залы</a></li>
-                    <li><a href="#">О заведении</a></li>
-                    <li><a href="#">Отзывы</a></li>
-                    <li><a href="#">Адреса</a></li>
+                    <li><a href="#kinolenta">Кинолента</a></li>
+                    <li><a href="#rooms-section">Залы</a></li>
+                    <li><a href="#o-zavedenii">О заведении</a></li>
+                    <li><a href="#otzyvy">Отзывы</a></li>
+                    <li><a href="#adresa">Адреса</a></li>
                 </ul>
             </nav>
         </div>
@@ -33,10 +33,12 @@
         </div>
     </div>
 
-    <div class="content">
-        <h3>Идеальное место для СВИДАНИЯ</h3>
-        <p>Гарантируем отличное качество фильмов как для заядлых киноманов, так и для любителей.</p>
-        
+
+
+    <div id="kinolenta" class="content">
+    <h3>Идеальное место для СВИДАНИЯ</h3>
+    <p>Гарантируем отличное качество фильмов как для заядлых киноманов, так и для любителей.</p>
+    
         <div class="movies-container">
             <div class="movie-card">
                 <img src="images/films/эбигейл.jpg" alt="Эбигейл">
@@ -86,56 +88,75 @@
                 <img src="images/films/спящие-псы.png" alt="Спящие псы">
                 <p>Спящие псы</p>
             </div>
+            <div class="movie-card">
+                <img src="images/films/Джокер.jpg" alt="Дем у дороги">
+                <p>Джокер</p>
+            </div>
+            <div class="movie-card">
+                <img src="images/films/Мстители.jpg" alt="Панда">
+                <p>Мстители</p>
+            </div>
+            <div class="movie-card">
+                <img src="images/films/Тихое место два.jpg" alt="Спящие псы">
+                <p>Тихое место</p>
+            </div>
+            <div class="movie-card">
+                <img src="images/films/Достор стредж.jpg" alt="Спящие псы">
+                <p>Доктор Стрендж</p>
+            </div>
         </div>
     </div>
 
 
-   <div class="rooms-section">
-    <h3>Наши залы</h3>
-    <p>Выбери подходящий зал по личным требованиям.</p>
-    
-    <div class="rooms-container">
-        <div class="room-card">
-            <h4>Зеленая комната</h4>
-            <p class="price">2499 ₽ - за всё</p>
-            <ul>
-                <li>Аренда зала: 2 часа</li>
-                <li>Любые фильмы на выбор без ограничений</li>
-                <li>Сет-суши в подарок</li>
-                <li>Пицца "Пеперони 40 см" в подарок</li>
-                <li>Алкоголь в подарок</li>
-            </ul>
-            <button>Забронировать</button>
-        </div>
-        <div class="room-card">
-            <h4>Розовая комната</h4>
-            <p class="price">4990 ₽ - за всё</p>
-            <ul>
-                <li>Аренда зала: 3 часа</li>
-                <li>Все тоже самое что в "Зеленая комната" тарифе</li>
-                <li>Украшение зала розами</li>
-                <li>Вкусные десерты: шоколадное фондю с фруктами, мороженное для двоих (на выбор в ассортименте)</li>
-                <li>Алкоголь в подарок</li>
-                <li>Кальян</li>
-                <li>Приставка PlayStation 5</li>
-            </ul>
-            <button>Забронировать</button>
-        </div>
-        <div class="room-card">
-            <h4>Красная комната</h4>
-            <p class="price">8990 ₽ - за всё</p>
-            <ul>
-                <li>Аренда зала: 6 часа</li>
-                <li>Все тоже самое что в "Розовая комната" тарифе</li>
-                <li>Праздничная сервировка стола, дизайнерские свечи</li>
-                <li>Ужин на двоих (Итальянская, Японская, Китайская кухни, на выбор)</li>
-                <li>Выступление саксофониста или скрипача, гитариста</li>
-                <li>Романтическая фотосессия в украшенном специально для вас кинозале</li>
-            </ul>
-            <button>Забронировать</button>
+    <div id="rooms-section" class="rooms-section">
+        <h3>Наши залы</h3>
+        <p>Выбери подходящий зал по личным требованиям.</p>
+        
+        <div class="rooms-container">
+            <div class="room-card">
+                <h4>Зеленая комната</h4>
+                <p class="price">2499 ₽ - за всё</p>
+                <ul>
+                    <li>Аренда зала: 2 часа</li>
+                    <li>Любые фильмы на выбор без ограничений</li>
+                    <li>Сет-суши в подарок</li>
+                    <li>Пицца "Пеперони 40 см" в подарок</li>
+                    <li>Алкоголь в подарок</li>
+                </ul>
+                <button>Забронировать</button>
+            </div>
+            <div class="room-card">
+                <h4>Розовая комната</h4>
+                <p class="price">4990 ₽ - за всё</p>
+                <ul>
+                    <li>Аренда зала: 3 часа</li>
+                    <li>Все тоже самое что в "Зеленая комната" тарифе</li>
+                    <li>Украшение зала розами</li>
+                    <li>Вкусные десерты: шоколадное фондю с фруктами, мороженное для двоих (на выбор в ассортименте)</li>
+                    <li>Алкоголь в подарок</li>
+                    <li>Кальян</li>
+                    <li>Приставка PlayStation 5</li>
+                </ul>
+                <button>Забронировать</button>
+            </div>
+            <div class="room-card">
+                <h4>Красная комната</h4>
+                <p class="price">8990 ₽ - за всё</p>
+                <ul>
+                    <li>Аренда зала: 6 часа</li>
+                    <li>Все тоже самое что в "Розовая комната" тарифе</li>
+                    <li>Праздничная сервировка стола, дизайнерские свечи</li>
+                    <li>Ужин на двоих (Итальянская, Японская, Китайская кухни, на выбор)</li>
+                    <li>Выступление саксофониста или скрипача, гитариста</li>
+                    <li>Романтическая фотосессия в украшенном специально для вас кинозале</li>
+                </ul>
+                <button>Забронировать</button>
+            </div>
         </div>
     </div>
-    <div class="difference-section">
+
+
+    <div id="o-zavedenii" class="difference-section">
         <h3>Чем отличаемся от обычного кинозала ?</h3>
         <p>
             В нашем Кинокафе нет камер видеонаблюдения, под <br> бронированием зала предполагается полная передача<br> 
@@ -145,28 +166,28 @@
         <div class="features-container">
             <div class="feature-card">
                 <div class="feature-icon">
-                    <img src="images/icons/icon1.png" alt="Иконка суперцены">
+                    <img src="images/icons/ico1.png" alt="Иконка суперцены">
                 </div>
                 <h4>Суперцены</h4>
                 <p>Курите кальян, ешьте суши и пиццу, пейте коктейли — это все дешевле чем сходить в ресторан или клуб.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <img src="images/icons/icon2.png" alt="Иконка топ-сервиса">
+                    <img src="images/icons/ico2.png" alt="Иконка топ-сервиса">
                 </div>
                 <h4>Топ-сервис</h4>
                 <p>Классная команда барменов, кальянщиков, официантов и поваров ждет вас.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <img src="images/icons/icon3.png" alt="Иконка можно с собой">
+                    <img src="images/icons/ico4.png" alt="Иконка можно с собой">
                 </div>
                 <h4>Можно с собой</h4>
                 <p>Приносите еду и напитки с собой. А бокалы и другую посуду мы предоставим.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">
-                    <img src="images/icons/icon4.png" alt="Иконка приставки и игры">
+                    <img src="images/icons/ico3.png" alt="Иконка приставки и игры">
                 </div>
                 <h4>Приставки и игры</h4>
                 <p>Новая PS5, большой выбор настольных игр для любителей драйва или напрячь извилины.</p>
@@ -200,7 +221,7 @@
             <div class="steps-container">
                 <div class="step">
                     <div class="icon">
-                        <img src="images/icons/icon5.jpg" alt="Оплата">
+                        <img src="images/icons/icon7 (2).jpg" alt="Оплата">
                     </div>
                     <div class="content">
                         <h4>Почему такой способ оплаты?</h4>
@@ -213,7 +234,7 @@
                 
                 <div class="step">
                     <div class="icon">
-                        <img src="images/icons/icon6.jpg" alt="Возврат">
+                        <img src="images/icons/icon6 (2).jpg" alt="Возврат">
                     </div>
                     <div class="content">
                         <h4>Можно ли оформить возврат средств?</h4>
@@ -226,7 +247,7 @@
         
                 <div class="step">
                     <div class="icon">
-                        <img src="images/icons/icon7.jpg" alt="Что дальше">
+                        <img src="images/icons/icon5 (2).jpg" alt="Что дальше">
                     </div>
                     <div class="content">
                         <h4>Я оплатил, что дальше?</h4>
@@ -263,7 +284,7 @@
 
 
 
-        <section class="reviews">
+        <section id="otzyvy" class="reviews">
             <h2>Отзывы</h2>
             <p>Наши гости делятся своими впечатлениями. Мы стараемся делать каждый визит незабываемым!</p>
             <div class="reviews-container">
@@ -315,7 +336,7 @@
                     </p>
                 </div>
                 <div class="review-card">
-                    <div class="review-header">
+                    <div  class="review-header">
                         <img src="images/avatars/6.jpg" alt="Аватар Ксении" class="review-avatar">
                         <span class="review-author">Ксения Нефёдова</span>
                     </div>
@@ -330,7 +351,7 @@
         
 
 
-        <div class="video-location-section">
+        <div id="adresa" class="video-location-section">
             <div class="image-container">
                 <img src="images/background4.jpg" alt="Видео" class="background-image">
                 <div class="text-overlay">
@@ -346,7 +367,7 @@
                 <div class="text-overlay">
                     <h3>Где мы находимся</h3>
                     <p>Мы будем рады вашему визиту</p>
-                    <p>Челябинск, Центральный район, ул. Кирова</p>
+                    <p>Краснодар, Ул. Красноармейская, 110</p>
                     <p>Работаем круглосуточно</p>
                 </div>
             </div>
