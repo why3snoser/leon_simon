@@ -967,155 +967,70 @@ body {
 
 /* ====== Телефоны (ширина экрана до 576px) ====== */
 @media (max-width: 576px) {
-    /* Уменьшаем размеры текста */
     body {
-        font-size: 14px;
-    }
-
-    .header h1 {
-        font-size: 4vw;
-    }
-
-    .header nav ul li a {
-        font-size: 3vw;
-    }
-
-    .hero {
-        height: 50vh; /* Уменьшенная высота для геро-секции */
-    }
-
-    .hero-title {
-        font-size: 4vw;
-    }
-
-    .hero-description {
-        font-size: 3vw;
-    }
-
-    .content h3 {
-        font-size: 4vw;
-    }
-
-    .content p {
-        font-size: 3vw;
-    }
-
-    /* Карточки фильмов */
-    .movies-container {
-        grid-template-columns: repeat(2, 1fr); /* Сетка 2x2 */
-        gap: 15px; /* Уменьшаем отступы */
-    }
-
-    .movie-card {
-        width: 100%; /* Карточки занимают всю ширину */
-        height: auto; /* Автоматическая высота */
-    }
-
-    .movie-card img {
-        height: 60%; /* Уменьшаем высоту изображения */
-    }
-
-    .movie-card p {
-        font-size: 1rem; /* Уменьшаем размер текста */
-    }
-}
-
-/* ====== Планшеты (ширина экрана от 577px до 768px) ====== */
-@media (min-width: 577px) and (max-width: 768px) {
-    .header h1 {
-        font-size: 3vw;
-    }
-
-    .header nav ul li a {
-        font-size: 1.5vw;
-    }
-
-    .hero {
-        height: 60vh; /* Умеренная высота для геро-секции */
-    }
-
-    .hero-title {
-        font-size: 3vw;
-    }
-
-    .hero-description {
-        font-size: 2vw;
-    }
-
-    .content h3 {
-        font-size: 3vw;
-    }
-
-    .content p {
-        font-size: 1.5vw;
-    }
-
-    /* Карточки фильмов */
-    .movies-container {
-        grid-template-columns: repeat(3, 1fr); /* Сетка 3x2 */
-        gap: 20px;
-    }
-
-    .movie-card {
-        width: 90%;
-        height: auto;
-    }
-
-    .movie-card img {
-        height: 65%;
-    }
-
-    .movie-card p {
-        font-size: 1.2rem;
-    }
-}
-
-
-/* Адаптивный стиль для отзывов на телефонах */
-@media (max-width: 576px) {
-    body {
-        font-size: 17px; /* Уменьшаем размер шрифта для телефона */
+        font-size: 16px; /* Небольшое уменьшение для более комфортного чтения */
+        margin: 0; /* Убираем лишние отступы */
     }
 
     .header {
-        padding: 10px; /* Сохраняем минимальные отступы */
+        padding: 10px;
+        position: static; /* Избегаем фиксированного положения */
+        background-color: #000; /* Добавляем контрастный фон */
+        color: #fff;
     }
 
     .header-content {
-        text-align: center; /* Центрируем заголовок */
-        padding: 0 10px; /* Уменьшенные боковые отступы */
+        text-align: center;
+        padding: 0 5px; /* Снижаем боковые отступы */
     }
 
     .header h1 {
-        font-size: 8vw; /* Увеличиваем текст для лучшей читаемости */
+        font-size: 7vw; /* Адаптивный размер для заголовка */
+        margin: 0; /* Убираем лишние отступы */
     }
 
-    .header nav ul { /* Список меню в колонку */
-        gap: 10px; /* Уменьшаем отступы между пунктами */
+    .header nav ul {
+        display: flex;
+        flex-direction: column; /* Переводим пункты в вертикальное направление */
+        gap: 5px; /* Уменьшаем промежутки */
+        padding: 0;
+        list-style: none;
     }
 
     .header nav ul li a {
-        font-size: 4vw; /* Увеличиваем шрифт для телефонов */
+        font-size: 4.5vw; /* Хорошая читаемость для ссылок */
+        text-decoration: none;
+        color: #fff;
     }
 
     .hero {
-        height: 50vh; /* Уменьшенная высота секции */
-        background-position: center; /* Центрируем изображение */
+        height: 60vh; /* Чуть больше высоты для мобильного */
+        background-size: cover; /* Корректируем масштабирование фона */
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
     }
 
     .hero-overlay {
-        padding: 10px; /* Уменьшенные внутренние отступы */
+        padding: 15px;
+        background: rgba(0, 0, 0, 0.5); /* Добавляем затемнение для читабельности */
+        border-radius: 8px;
+        text-align: center;
     }
 
     .hero-title {
-        font-size: 5vw; /* Увеличиваем заголовок для акцента */
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Уменьшенная тень */
+        font-size: 6vw; /* Подстраиваем для заголовка */
+        margin: 0;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Добавляем акцент */
     }
 
     .hero-description {
-        font-size: 3.5vw; /* Увеличиваем текст описания */
+        font-size: 4vw;
         margin-top: 10px;
-        line-height: 1.4; /* Оптимальный межстрочный интервал */
+        line-height: 1.5; /* Чуть увеличиваем межстрочный интервал */
     }
 
 
